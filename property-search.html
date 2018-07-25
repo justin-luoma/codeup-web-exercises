@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for Property</title>
+</head>
+<body>
+<form action="http://localhost:12345/dumprequest" method="post">
+    <label for="type">Property Type:</label>
+    <select name="type" id="type">
+        <option value="apartment">Apartment</option>
+        <option value="townhouse">Townhouse</option>
+        <option value="modern">Modern</option>
+        <option value="mobile">Mobile</option>
+        <option value="castle" selected>Castle</option>
+    </select>
+    <br>
+    <label for="footage">Square Footage:</label>
+    <input type="number" name="foorage" id="footage" min="1" required>
+    <br>
+    <label for="min-price">Minimum Price</label>
+    <input type="number" name="min-price" id="min-price" min="1" required>
+    <br>
+    <label for="max-price">Maximum Price:</label>
+    <input type="number" name="max-price" id="max-price" min="1" required>
+    <br>
+    <label for="zip">Zipcode:</label>
+    <input type="text" name="zip" id="zip" pattern="[0-9]{5}" maxlength="5" minlength="5" required>
+    <br>
+    <label for="bed"># of Bedrooms:</label>
+    <input type="number" name="bed" id="bed" min="1" value="1" required>
+    <br>
+    <label for="bath"># of Bathrooms:</label>
+    <input type="number" name="bath" id="bath" min="1" value="1" required>
+    <br>
+    <input type="submit" value="Search now">
+</form>
+</body>
+</html>

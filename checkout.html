@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+<form action="http://localhost:12345/dumprequest" method="post">
+    <label for="name">Name On Card:</label>
+    <input type="text" name="name" id="name" pattern="[A-z,\s]{1,}" required>
+    <br>
+    <label for="credit">Credit Card Number:</label>
+    <input type="text" name="credit" id="credit"
+           minlength="16" maxlength="16"
+           placeholder="1111222233334444" pattern="[0-9]{16}" required>
+    <br>
+    <label>Expiration Date:</label>
+    <br>
+    <label for="expir-month">Month:</label>
+    <input type="number" name="expir-month" id="expir-month" value="1" min="1" max="12" required>
+    <label for="expir-year">Year:</label>
+    <input type="number" name="expir-year" id="expir-year" value="18" min="18" maxlength="2" required>
+    <br>
+    <label for="code">Security Code:</label>
+    <input type="text" name="code" id="code" minlength="3" maxlength="3" pattern="[0-9]{3}" placeholder="666" required>
+    <br>
+    <label for="save">Keep this credit card on file for future transactions</label>
+    <input type="checkbox" name="save" id="save">
+    <br>
+    <input type="submit" value="Buy Now!">
+</form>
+</body>
+</html>

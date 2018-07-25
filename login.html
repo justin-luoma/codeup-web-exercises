@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="http://localhost:12345/dumprequest" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required autofocus>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <br>
+    <label for="stay-logged-in">Keep me logged in for 2 weeks</label>
+    <input type="checkbox" name="stay-logged-in" id="stay-logged-in" checked>
+    <br>
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>
