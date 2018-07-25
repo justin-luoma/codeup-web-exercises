@@ -8,31 +8,40 @@
 <form method="POST" action="http://localhost:12345/dumprequest">
     <label for="email">Email:</label>
     <input type="text" id="email" name="email" placeholder="myemail@example.com">
-    <br />
+    <br/>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="password">
-    <br />
+    <br/>
     <label for="bio">Bio:</label>
     <textarea id="bio" name="bio"></textarea>
     <fieldset name="hear">
-    <legend>How did you hear about us?</legend>
-    <label>
-        <input type="checkbox" name="hear[]" value="billboard">
-        Billboard
-    </label>
-    <label>
-        <input type="checkbox" name="hear[]" value="radio_ad">
-        Radio Advertisement
-    </label>
-    <label>
-        <input type="checkbox" name="hear[]" value="internet_ad">
-        Internet Advertisement
-    </label>
-    <label>
-        <input type="checkbox" name="hear[]" value="other">
-        Other
-    </label>
+        <legend>How did you hear about us?</legend>
+        <label>
+            <input type="checkbox" name="hear[]" value="billboard">
+            Billboard
+        </label>
+        <label>
+            <input type="checkbox" name="hear[]" value="radio_ad">
+            Radio Advertisement
+        </label>
+        <label>
+            <input type="checkbox" name="hear[]" value="internet_ad">
+            Internet Advertisement
+        </label>
+        <label>
+            <input type="checkbox" name="hear[]" value="other">
+            Other
+        </label>
     </fieldset>
+    <label for="browser">What web browser do you use?</label>
+    <select id="browser" name="browser">
+        <option value="chrome">Chrome</option>
+        <option value="firefox">Firefox</option>
+        <option value="safari">Safari</option>
+        <option value="opera">Opera</option>
+        <option value="links">Links</option>
+    </select>
+    <br/>
     <input type="submit">
 </form>
 </body>
