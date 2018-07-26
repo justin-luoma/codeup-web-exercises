@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>justin-luoma.github.io/codeup_web_exercises</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script type="text/javascript">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        var request = new XMLHttpRequest();
-        request.open('GET', 'https://api.github.com/repos/justin-luoma/codeup_web_exercises/contents', true);
-        request.onload = function () {
+    <title>justin-luoma.github.io</title>
 
-            // Begin accessing JSON data here
-            var data = JSON.parse(this.response);
-            if (request.status >= 200 && request.status < 400) {
-                // for (var i = 0; i < data.length; i++) {
-                //     var obj = data[i];
-                //     for (var key in obj) {
-                //         if (key === "name") {
-                //             console.log(obj[key]);
-                //         }
-                //     }
-                // }
-                data.forEach(function (obj) {
-                    var fileName = obj.name;
-                    if (fileName.endsWith(".html")) {
-                        var contentDiv = document.getElementById("page-content");
-                        var aTag = document.createElement("a");
-                        aTag.setAttribute("href", "https://justin-luoma.github.io/codeup_web_exercises/" + fileName);
-                        aTag.innerHTML = fileName;
-                        contentDiv.appendChild(aTag);
-                        contentDiv.appendChild(document.createElement("br"));
-                    }
-                });
-                // data.forEach(file => {
-                //     var fileName = file.name
-                // // console.log(fileName);
-                // if (fileName.endsWith(".html")) {
-                //     // console.log(fileName)
-                //       var contentDiv = document.getElementById("page-content");
-                //     var aTag = document.createElement('a');
-                //     aTag.setAttribute('href', "https://justin-luoma.github.io/codeup_web_exercises/" + fileName);
-                //     aTag.innerHTML = fileName;
-                //     contentDiv.appendChild(aTag);
-                //     contentDiv.appendChild(document.createElement('br'));
-                //    }
-                // });
-            } else {
-                console.log("there was an error")
-            }
-        };
+    <script src="github_io/js/js.js"></script>
 
-        function sendRequest() {
-            request.send();
-        }
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="github_io/css/style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-        window.onload = sendRequest;
-    </script>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-<div id="body">
-    <h1>Welcome to justin-luoma.github.io/codeup_web_exercises</h1>
-    <div id="page-content">
-        <h2>Pages in this repo</h2>
-        <!-- This is filled by javascript. -->
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>justin-luoma</h3>
+        </div>
+        <ul id="menu-list" class="list-unstyled components">
+
+        </ul>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content">
+        <iframe id="iframe" src="github_io/select.html" frameborder="no" scrolling="yes"
+                width="100%" height="100%">
+        </iframe>
     </div>
 </div>
+
 </body>
+
 </html>
