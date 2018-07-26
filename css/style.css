@@ -1,5 +1,5 @@
 * {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Eczar', serif;
 }
 
 body {
@@ -20,6 +20,24 @@ header {
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
+}
+
+#img {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#img img {
+    float: left;
+    display: block;
+    padding: 0;
+}
+
+#img div {
+    display: block;
+    float: left;
+    height: 200px;
 }
 
 h1, h2, h3, h4, h5, h6 {
