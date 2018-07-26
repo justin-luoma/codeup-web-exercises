@@ -6,7 +6,7 @@
 }
 
 /*  selector for all "h1" elements
-    that are a descendent of id="container"
+    that are a descendant of id="container"
     and have a class of "fancy-header" */
 #container h1.fancy-header {
     color: blue;

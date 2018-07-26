@@ -3,13 +3,9 @@
 }
 
 body {
-    background-image: url("../img/abstract-attractive-backdrop-988872.jpg");
+    background: aliceblue url("../img/abstract-attractive-backdrop-988872.jpg") no-repeat fixed center;
     -webkit-background-size: 700px;
     background-size: 700px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: aliceblue;
 }
 
 #body-div {
