@@ -1,12 +1,13 @@
 /*
     DEMO STYLE
 */
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 html, body {
     height: 100%;
     overflow: hidden;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -18,7 +19,7 @@ body {
     display: block;
 }
 
-p, .arrow_box>div {
+p, .arrow_box > div {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
@@ -107,7 +108,7 @@ a:focus {
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
     background: #6d7fcc;
@@ -177,18 +178,21 @@ a.article:hover {
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
+    /*#sidebar {*/
+    /*margin-left: -250px;*/
+    /*}*/
     #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
         margin-left: 0;
     }
+
     #content {
         width: 100%;
     }
+
     #content.active {
         width: calc(100% - 250px);
     }
+
     #sidebarCollapse span {
         display: none;
     }
@@ -237,6 +241,7 @@ a.article:hover {
     border-width: 30px;
     margin-top: -30px;
 }
+
 .arrow_box:before {
     border-color: rgba(201, 203, 163, 0);
     border-right-color: #c9cba3;
@@ -260,12 +265,23 @@ a.article:hover {
 .toggle-content.is-visible {
     position: absolute;
     margin: auto;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 50px;
-    width: 20%;
-    height: 20px;
+    max-width: 50%;
+    text-align: center;
+    max-height: 50px;
     display: block;
     opacity: 1;
+    background-color: white;
+}
+
+#message {
+    padding: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: #d1d3d7 solid thin;
+    background-color: #fcfbc9;
+    color: #8e7b15;
 }

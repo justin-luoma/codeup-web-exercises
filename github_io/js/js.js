@@ -26,8 +26,8 @@ request.onload = function () {
                 var liA = document.createElement("a");
                 liA.setAttribute("href", "#");
                 liA.setAttribute("onclick",
-                    "changePage('https://justin-luoma.github.io/codeup_web_exercises/" +fileName + "')");
-                var linkText = fileName.replace(".html","");
+                    "changePage('https://justin-luoma.github.io/codeup_web_exercises/" + fileName + "')");
+                var linkText = fileName.replace(".html", "");
                 liA.innerText = linkText;
                 li.appendChild(liA);
                 contentDiv.appendChild(li);
@@ -82,9 +82,9 @@ var show = function (elem) {
     elem.style.height = height; // Update the max-height
 
     // Once the transition is complete, remove the inline max-height so the content can scale responsively
-    window.setTimeout(function () {
-        elem.style.height = '';
-    }, 350);
+    // window.setTimeout(function () {
+    //     elem.style.height = '';
+    // }, 350);
 
 };
 
