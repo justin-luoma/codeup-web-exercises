@@ -243,3 +243,29 @@ a.article:hover {
     border-width: 36px;
     margin-top: -36px;
 }
+
+.toggle {
+    z-index: 1100;
+}
+
+.toggle-content {
+    z-index: 1000;
+    display: none;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+}
+
+.toggle-content.is-visible {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    width: 20%;
+    height: 20px;
+    display: block;
+    opacity: 1;
+}
