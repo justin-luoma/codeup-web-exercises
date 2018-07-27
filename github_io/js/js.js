@@ -46,66 +46,24 @@ var getHeight = function (elem) {
     return height;
 };
 
-
-var adjHeight = function (elem) {
-
-};
-
 // Show an element
 var show = function (elem) {
-    var height = getHeight(elem); // Get the natural height
+    elem.style.display = "table";
+    elem.style.opacity = "100";
     elem.classList.add('is-visible'); // Make the element visible
-    elem.style.height = height; // Update the max-height
 };
 
 // Hide an element
 var hide = function (elem) {
 
-    // Give the element a height to change from
-    elem.style.height = elem.scrollHeight + 'px';
-
-    // Set the height back to 0
-    window.setTimeout(function () {
-        elem.style.height = '0';
-    }, 1);
-
+    elem.style.opacity = "0";
     // When the transition is complete, hide it
     window.setTimeout(function () {
         elem.classList.remove('is-visible');
-    }, 350);
+        elem.style.display = "none";
+    }, 750);
 
 };
-
-// Toggle element visibility
-var toggle = function (elem, timing) {
-    // If the element is visible, hide it
-    if (elem.classList.contains('is-visible')) {
-        hide(elem);
-        return;
-    }
-
-    // Otherwise, show it
-    show(elem);
-
-};
-
-// Listen for click events
-document.addEventListener('click', function (event) {
-
-    // Make sure clicked element is our toggle
-    if (!event.target.classList.contains('toggle')) return;
-
-    // Prevent default link behavior
-    event.preventDefault();
-
-    // Get the content
-    var content = document.querySelector(event.target.hash);
-    if (!content) return;
-
-    // Toggle the content
-    toggle(document.getElementById("message"));
-
-}, false);
 
 var hideMsg = function () {
     hide(document.getElementById("message"));
