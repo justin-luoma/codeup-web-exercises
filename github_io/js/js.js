@@ -6,14 +6,6 @@ request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-        // for (var i = 0; i < data.length; i++) {
-        //     var obj = data[i];
-        //     for (var key in obj) {
-        //         if (key === "name") {
-        //             console.log(obj[key]);
-        //         }
-        //     }
-        // }
         data.forEach(function (obj) {
             var fileName = obj.name;
             if (fileName.endsWith(".html")) {
@@ -22,7 +14,6 @@ request.onload = function () {
                 }
                 var contentDiv = document.getElementById("menu-list");
                 var li = document.createElement("li");
-                // li.setAttribute("class", "luxbar-item");
                 var liA = document.createElement("a");
                 liA.setAttribute("href", "#");
                 liA.setAttribute("onclick",
@@ -31,25 +22,8 @@ request.onload = function () {
                 liA.innerText = linkText;
                 li.appendChild(liA);
                 contentDiv.appendChild(li);
-                // aTag.setAttribute("href", "https://justin-luoma.github.io/codeup_web_exercises/" + fileName);
-                // aTag.innerHTML = fileName;
-                // contentDiv.appendChild(aTag);
-                // contentDiv.appendChild(document.createElement("br"));
             }
         });
-        // data.forEach(file => {
-        //     var fileName = file.name
-        // // console.log(fileName);
-        // if (fileName.endsWith(".html")) {
-        //     // console.log(fileName)
-        //       var contentDiv = document.getElementById("page-content");
-        //     var aTag = document.createElement('a');
-        //     aTag.setAttribute('href', "https://justin-luoma.github.io/codeup_web_exercises/" + fileName);
-        //     aTag.innerHTML = fileName;
-        //     contentDiv.appendChild(aTag);
-        //     contentDiv.appendChild(document.createElement('br'));
-        //    }
-        // });
     } else {
         console.log("there was an error")
     }
@@ -79,23 +53,9 @@ var adjHeight = function (elem) {
 
 // Show an element
 var show = function (elem) {
-
-    // Get the natural height of the element
-    // var getHeight = function () {
-    //     elem.style.display = 'block'; // Make it visible
-    //     var height = elem.scrollHeight + 'px'; // Get it's height
-    //     elem.style.display = ''; //  Hide it again
-    //     return height;
-    // };
     var height = getHeight(elem); // Get the natural height
     elem.classList.add('is-visible'); // Make the element visible
     elem.style.height = height; // Update the max-height
-
-    // Once the transition is complete, remove the inline max-height so the content can scale responsively
-    // window.setTimeout(function () {
-    //     elem.style.height = '';
-    // }, 350);
-
 };
 
 // Hide an element
@@ -118,7 +78,6 @@ var hide = function (elem) {
 
 // Toggle element visibility
 var toggle = function (elem, timing) {
-    console.log(elem)
     // If the element is visible, hide it
     if (elem.classList.contains('is-visible')) {
         hide(elem);
@@ -143,7 +102,6 @@ document.addEventListener('click', function (event) {
     var content = document.querySelector(event.target.hash);
     if (!content) return;
 
-    console.log(content)
     // Toggle the content
     toggle(document.getElementById("message"));
 
@@ -170,4 +128,3 @@ function windowLoaded() {
 }
 
 window.onload = windowLoaded;
-

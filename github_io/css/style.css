@@ -264,11 +264,11 @@ a.article:hover {
 
 .toggle-content.is-visible {
     position: absolute;
-    margin: auto;
+    margin: 0 auto;
     left: 0;
     right: 0;
     bottom: 50px;
-    max-width: 50%;
+    width: 50%;
     text-align: center;
     /*min-height: 75px;*/
     display: table;
