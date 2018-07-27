@@ -59,25 +59,35 @@ function sendRequest() {
     request.send();
 }
 
-window.onload = sendRequest;
 
 function changePage(page) {
     var iframe = document.getElementById("iframe");
     iframe.src = page;
 }
 
+var getHeight = function (elem) {
+    elem.style.display = 'block'; // Make it visible
+    var height = elem.scrollHeight + 'px'; // Get it's height
+    elem.style.display = ''; //  Hide it again
+    return height;
+};
+
+
+var adjHeight = function (elem) {
+
+};
+
 // Show an element
 var show = function (elem) {
 
     // Get the natural height of the element
-    var getHeight = function () {
-        elem.style.display = 'block'; // Make it visible
-        var height = elem.scrollHeight + 'px'; // Get it's height
-        elem.style.display = ''; //  Hide it again
-        return height;
-    };
-
-    var height = getHeight(); // Get the natural height
+    // var getHeight = function () {
+    //     elem.style.display = 'block'; // Make it visible
+    //     var height = elem.scrollHeight + 'px'; // Get it's height
+    //     elem.style.display = ''; //  Hide it again
+    //     return height;
+    // };
+    var height = getHeight(elem); // Get the natural height
     elem.classList.add('is-visible'); // Make the element visible
     elem.style.height = height; // Update the max-height
 
@@ -108,7 +118,7 @@ var hide = function (elem) {
 
 // Toggle element visibility
 var toggle = function (elem, timing) {
-
+    console.log(elem)
     // If the element is visible, hide it
     if (elem.classList.contains('is-visible')) {
         hide(elem);
@@ -133,7 +143,31 @@ document.addEventListener('click', function (event) {
     var content = document.querySelector(event.target.hash);
     if (!content) return;
 
+    console.log(content)
     // Toggle the content
-    toggle(content);
+    toggle(document.getElementById("message"));
 
 }, false);
+
+var hideMsg = function () {
+    hide(document.getElementById("message"));
+};
+
+var showMsg = function () {
+    show(document.getElementById("message"));
+};
+
+function messageShow() {
+    showMsg();
+    setTimeout(function () {
+        hideMsg()
+    }, 5000);
+}
+
+function windowLoaded() {
+    sendRequest();
+    messageShow();
+}
+
+window.onload = windowLoaded;
+

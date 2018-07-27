@@ -270,18 +270,31 @@ a.article:hover {
     bottom: 50px;
     max-width: 50%;
     text-align: center;
-    max-height: 50px;
-    display: block;
+    /*min-height: 75px;*/
+    display: table;
     opacity: 1;
-    background-color: white;
+}
+
+#close {
+    float: right;
+    margin: -.2em .2em 0 0;
 }
 
 #message {
-    padding: 8px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: #d1d3d7 solid thin;
     background-color: #fcfbc9;
     color: #8e7b15;
+}
+
+#message p {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin: 0;
+    color: #8e7b15;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0 .8em;
 }
