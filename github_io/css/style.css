@@ -50,6 +50,16 @@ a:focus {
     border: none;
 }
 
+#sidebar-links {
+    position: fixed;
+    bottom: 50px;
+    overflow: auto;
+}
+
+/*#github-btn {*/
+/*float: bottom;*/
+/*}*/
+
 .line {
     width: 100%;
     height: 1px;
@@ -76,7 +86,7 @@ a:focus {
     background: #212121;
     color: #fff;
     transition: all 0.3s;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 #sidebar.active {
