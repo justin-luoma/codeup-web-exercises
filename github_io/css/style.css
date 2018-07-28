@@ -17,6 +17,10 @@ body {
     height: 100%;
     padding: 0;
     display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 250px;
 }
 
 p, .arrow_box > div {
@@ -51,8 +55,9 @@ a:focus {
 }
 
 #sidebar-links {
-    position: fixed;
-    bottom: 50px;
+    position: relative;
+    height: 80%;
+    width: 250px;
     overflow: auto;
 }
 
@@ -94,12 +99,28 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #212129;
+    padding: 1em;
+}
+
+.sidebar-header {
+    background-color: #212153;
+}
+
+#github-logo {
+    height: 16px;
+    width: 16px;
+}
+
+#github-link {
+    position: fixed;
+    bottom: 0;
+    padding: .2em;
+    width: 250px;
+    text-align: right;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding: 0 .5em;
 }
 
 #sidebar ul p {
@@ -108,7 +129,7 @@ a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: .3em;
     font-size: 1.1em;
     display: block;
 }
@@ -246,16 +267,14 @@ a.article:hover {
 }
 
 .arrow_box:after {
-    border-color: rgba(114, 61, 70, 0);
+    border: 30px rgba(114, 61, 70, 0);
     border-right-color: #723d46;
-    border-width: 30px;
     margin-top: -30px;
 }
 
 .arrow_box:before {
-    border-color: rgba(201, 203, 163, 0);
+    border: 36px rgba(201, 203, 163, 0);
     border-right-color: #c9cba3;
-    border-width: 36px;
     margin-top: -36px;
 }
 
