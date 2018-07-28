@@ -267,14 +267,16 @@ a.article:hover {
 }
 
 .arrow_box:after {
-    border: 30px rgba(114, 61, 70, 0);
+    border-color: rgba(114, 61, 70, 0);
     border-right-color: #723d46;
+    border-width: 30px;
     margin-top: -30px;
 }
 
 .arrow_box:before {
-    border: 36px rgba(201, 203, 163, 0);
+    border-color: rgba(201, 203, 163, 0);
     border-right-color: #c9cba3;
+    border-width: 36px;
     margin-top: -36px;
 }
 
