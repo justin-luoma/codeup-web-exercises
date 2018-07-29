@@ -23,14 +23,6 @@ body {
     left: 250px;
 }
 
-p, .arrow_box > div {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
-
 a,
 a:hover,
 a:focus {
@@ -227,57 +219,6 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-}
-
-#select-body {
-    background-color: #690500;
-}
-
-.arrow_box {
-    position: relative;
-    background: #723d46;
-    border: 4px solid #c9cba3;
-    height: 100px;
-    width: 200px;
-    margin-left: 50px;
-    margin-top: 100px;
-    text-align: center;
-}
-
-.arrow_box div {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 70%;
-    height: 30%;
-}
-
-.arrow_box:after, .arrow_box:before {
-    right: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
-
-.arrow_box:after {
-    border-color: rgba(114, 61, 70, 0);
-    border-right-color: #723d46;
-    border-width: 30px;
-    margin-top: -30px;
-}
-
-.arrow_box:before {
-    border-color: rgba(201, 203, 163, 0);
-    border-right-color: #c9cba3;
-    border-width: 36px;
-    margin-top: -36px;
 }
 
 .toggle {
