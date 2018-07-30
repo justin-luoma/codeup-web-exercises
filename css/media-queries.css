@@ -7,6 +7,10 @@
     --nav-a: #ccc;
 }
 
+.sub-section {
+    font-style: italic;
+}
+
 .fa-facebook {
     background: #3B5998;
     color: white;
