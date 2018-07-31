@@ -3,47 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/grid-layout.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Media Queries</title>
 </head>
 <body>
-<div class="alert-info hidden-on-desktop">
-    <a href="#main">Skip to main content</a>
-</div>
-<h1>Company</h1>
-<nav>
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-<div class="header-img">
-    <img src="https://picsum.photos//900/400" alt="">
-</div>
-<section id="main" class="main">
-    <h2>Main Section</h2>
-    <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non. Accusantium
-        sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores sapiente
-        in?</p>
-</section>
-<section class="sub-section">
-    <h2>Sub-section</h2>
-    <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima aspernatur harum cum
-        totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
-</section>
-<footer>
-    <p>(c) 2017 All rights reserved</p>
-    <div id="social-media-links">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
+<div class="container">
+    <div class="row">
+        <div class="column full hidden-on-desktop alert-info">
+            <a href="#main">Skip to main content</a>
+        </div>
     </div>
-</footer>
+    <div class="row">
+        <div class="column one-half">
+            <h1>Company</h1>
+        </div>
+        <div class="column one-half">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column full header-img">
+            <img src="https://picsum.photos//900/400" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column two-thirds">
+            <section id="main" class="main">
+                <h2>Main Section</h2>
+                <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non.
+                    Accusantium
+                    sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores
+                    sapiente
+                    in?</p>
+            </section>
+        </div>
+        <div class="column one-third">
+            <section class="sub-section">
+                <h2>Sub-section</h2>
+                <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima
+                    aspernatur harum
+                    cum
+                    totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="column one-third">
+                <p>(c) 2017 All rights reserved</p>
+            </div>
+            <div class="column one-third"></div>
+            <div class="column one-third">
+                <div id="social-media-links">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 </body>
 </html>

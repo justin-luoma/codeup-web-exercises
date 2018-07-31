@@ -29,10 +29,15 @@ html, body {
 }
 
 .column {
-    border: solid .1em;
-    background-color: #e1e1e1;
+    /*remove CSS II Grids exercise 1
+    border: solid .1em;*/
+    /*background-color: #e1e1e1;*/
     float: left;
     padding: 1em;
+}
+
+.column.full {
+    width: 100%;
 }
 
 .column.one-half {
@@ -55,12 +60,16 @@ html, body {
     width: 12.5%;
 }
 
+.column.two-thirds {
+    width: 66.66%;
+}
+
 footer {
     padding: 1em 0 0 0;
 }
 
 @media screen and (max-width: 768px) {
-    .column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eighth {
+    .column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eighth, .column.two-thirds {
         width: 100%;
     }
 }
