@@ -93,6 +93,10 @@
         padding-top: 5em;
     }
 
+    footer p {
+        padding-top: 1.2em;
+    }
+
     #social-media-links {
         position: relative;
         float: right;
