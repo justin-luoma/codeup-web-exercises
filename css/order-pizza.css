@@ -1,0 +1,13 @@
+/*.nav-item:hover {*/
+/*background-color: #271b87;*/
+/*}*/
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    background-size: 100%;
+}
+
+.jumbotron h1 {
+    color: #6f6a5c;
+    background: hsla(360, 100%, 100%, 0.66);
+}
