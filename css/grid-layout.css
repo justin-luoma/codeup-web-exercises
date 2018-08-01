@@ -69,7 +69,10 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-    .column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eighth, .column.two-thirds {
-        width: 100%;
+    /*.column.one-half, .column.one-third, .column.one-fourth, .column.one-sixth, .column.one-eighth, .column.two-thirds {*/
+    /*width: 100%;*/
+    /*}*/
+    .column {
+        width: 100% !important;
     }
 }
