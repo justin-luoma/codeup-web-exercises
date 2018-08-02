@@ -8,6 +8,10 @@
 }
 
 .jumbotron h1 {
-    color: #6f6a5c;
+    color: hsla(35, 16%, 36%, 0.8);
     background: hsla(360, 100%, 100%, 0.66);
+}
+
+.navbar-brand {
+    color: rgba(0, 0, 0, .5) !important;
 }
