@@ -19,12 +19,16 @@
 </head>
 <body>
 
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- collapse button (only visable on smaller devices) -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">Pizza World</a>
+
+    <!-- navbar menu content -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-3">
             <li class="nav-item active">
@@ -49,12 +53,18 @@
     </div>
 </nav>
 
+<!-- main container -->
 <main role="main">
+    <!-- jumbotron -->
     <div class="jumbotron jumbotron-fluid text-center d-none d-md-block">
         <h1 class="display-4">Welcome to Pizza World!</h1>
     </div>
+
+    <!-- container for the rest of the page -->
     <div class="container-fluid">
         <h2 class="display-6">Build your own pizza!</h2>
+
+        <!-- navigation tabs -->
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" href="#"><span class="badge badge-secondary">1</span> Size and crust</a>
@@ -66,9 +76,13 @@
                 <a class="nav-link" href="#"><span class="badge badge-secondary">3</span> Toppings</a>
             </li>
         </ul>
+
+        <!-- card 1 -- size and crust -->
         <div class="card">
             <div class="card-header bg-primary text-white">Choose size and crust</div>
             <div class="card-body">
+
+                <!-- card 1 1 size -->
                 <div class="card">
                     <div class="card-header">Hand Tossed</div>
                     <div class="card-body">Garlic seasoned crust with a rich, buttery taste.</div>
@@ -93,6 +107,8 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- card 1 2 crust -->
                 <div class="card mt-3">
                     <div class="card-header">Crispy Thin</div>
                     <div class="card-body">Thin enough for optimum crispy to crunchy ratio.</div>
@@ -118,13 +134,20 @@
                     </ul>
                 </div>
             </div>
+
+
+            <!-- card 1 footer -->
             <div class="card-footer d-flex flex-row-reverse">
                 <button type="button" class="btn btn-primary">Next Step ›</button>
             </div>
         </div>
+
+        <!-- card 2 cheese and sauce -->
         <div class="card mt-4">
             <h6 class="card-header bg-primary text-white">Choose Cheese and Sauce</h6>
             <div class="card-body">
+
+                <!-- card 2 1 cheese -->
                 <div class="card">
                     <div class="card-header">Cheese</div>
                     <div class="card-body pt-2 pb-0">
@@ -141,6 +164,8 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- card 2 2 sauce -->
                 <div class="card mt-3">
                     <div class="card-header">Sauce</div>
                     <form>
@@ -170,6 +195,8 @@
                     </form>
                 </div>
             </div>
+
+            <!-- card 2 footer -->
             <div class="card-footer d-flex flex-row-reverse">
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-primary">‹ Previous Step</button>
@@ -177,9 +204,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- card 3 toppings -->
         <div class="card mt-4">
             <h6 class="card-header bg-primary text-white">Choose Toppings</h6>
             <div class="card-body">
+
+                <!-- card 3 1 meats -->
                 <div class="card">
                     <div class="card-header">Choose Meats</div>
                     <form>
@@ -219,6 +250,8 @@
                         </ul>
                     </form>
                 </div>
+
+                <!-- card 3 2 non-meats -->
                 <div class="card mt-3">
                     <div class="card-header">Choose Non-Meats</div>
                     <form>
@@ -259,6 +292,8 @@
                     </form>
                 </div>
             </div>
+
+            <!-- card 3 footer -->
             <div class="card-footer d-flex flex-row-reverse">
                 <button type="button" class="btn btn-primary">Checkout <span class="fas fa-shopping-cart"></span>
                 </button>
