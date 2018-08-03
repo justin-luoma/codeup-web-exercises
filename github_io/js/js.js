@@ -1,7 +1,7 @@
 "use strict";
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://api.github.com/repos/justin-luoma/codeup_web_exercises/contents', true);
+request.open('GET', 'https://api.github.com/repos/justin-luoma/codeup-web-exercises/contents', true);
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
@@ -17,7 +17,7 @@ request.onload = function () {
                 var liA = document.createElement("a");
                 liA.setAttribute("href", "#");
                 liA.setAttribute("onclick",
-                    "changePage('https://justin-luoma.github.io/codeup_web_exercises/" + fileName + "')");
+                    "changePage('https://justin-luoma.github.io/codeup-web-exercises/" + fileName + "')");
                 var linkText = fileName.replace(".html", "");
                 liA.innerText = linkText;
                 li.appendChild(liA);
