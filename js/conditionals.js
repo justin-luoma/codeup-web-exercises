@@ -49,6 +49,7 @@ if (userWantsToEnterNumber) {
         numberInfo(userNumber);
     }
 }
+
 /* ########################################################################## */
 
 /**
@@ -69,6 +70,16 @@ if (userWantsToEnterNumber) {
  * console.logging the function's return value
  */
 
+function analyzeColor(color) {
+    if (color === "blue") {
+        return "blue is the color of the sky";
+    } else if (color === "red") {
+        return "Strawberries are red";
+    } else {
+        return "I don't know anything about " + color;
+    }
+}
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -76,16 +87,30 @@ if (userWantsToEnterNumber) {
 //                  will contain a different color everytime the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
 
+console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+function analyzeColorSwitch(color) {
+    switch (color) {
+        case "blue":
+            return "blue is the color of the sky";
+        case "red":
+            return "Strawberries are red";
+        default:
+            return "I don't know anything about " + color;
+    }
+}
 
 /**
  * TODO:
@@ -93,6 +118,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var usersColor = prompt("Enter a color");
+alert(analyzeColorSwitch(usersColor));
 
 /* ########################################################################## */
 
@@ -116,6 +144,25 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+function calculateTotal(total, luckyN) {
+    switch (parseInt(luckyN, 10)) {
+        case 0:
+            return total;
+        case 1:
+            return total * .9;
+        case 2:
+            return total * .75;
+        case 3:
+            return total * .65;
+        case 4:
+            return total * .5;
+        case 5:
+            return 0;
+        default:
+            return "That is not a number"
+    }
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -124,4 +171,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+alert("Your lucky number is: " + luckyNumber);
+var usersTotal = prompt("What is your total");
+console.log("Your total is: " + calculateTotal(usersTotal, luckyNumber));
