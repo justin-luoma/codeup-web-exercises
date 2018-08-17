@@ -167,5 +167,40 @@
     books.push(createBook("The Hitchhikers Guide to the Galaxy", "Douglas Adams"));
     books.push(createBook("Lightning", "Dean Koontz"));
 
+    let library = {
+        books: [],
+        showBookInfo: function (book) {
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        },
+        createBook: function (title, author) {
+            return {
+                title: title,
+                author: {
+                    firstName: author.split(" ")[0],
+                    lastName: author.split(" ")[1],
+                },
+            };
+        },
+        addBooksToLibrary: function (...books) {
+            books.forEach((book) => {
+                this.books.push(book);
+            });
+        },
+        showLibrary: function () {
+            this.books.forEach((book, i) => {
+                console.log("Book # " + (i + 1));
+                this.showBookInfo(book);
+            });
+        },
+    };
+
+    library.addBooksToLibrary(
+        library.createBook("The Salmon of Doubt", "Douglas Adams"),
+        library.createBook("The Hitchhikers Guide to the Galaxy", "Douglas Adams")
+    );
+    library.addBooksToLibrary(library.createBook("Lightning", "Dean Koontz"));
+    library.showLibrary();
+
 
 })();
