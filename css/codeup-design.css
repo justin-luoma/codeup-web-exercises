@@ -1,0 +1,217 @@
+body {
+    background-color: #f0f0f0;
+    background-image: url(../img/header.png);
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+    background-size: 100% 65px;
+}
+
+#logo {
+    height: 105px !important;
+    width: 105px !important;
+}
+
+.nav-row {
+    font-family: 'Abel', sans-serif;
+}
+
+p {
+    font-family: 'Abel', sans-serif;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    /*font-family: 'Abel', sans-serif;*/
+    font-size: 48px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2rem !important;
+}
+
+.page-h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    text-align: center;
+}
+
+.icons {
+    /*border-radius: 50%;*/
+    font-family: 'Anton', sans-serif;
+    /*background-color:#e6563b;*/
+    height: 105px;
+    width: 105px;
+    border-width: thick !important;
+    /*font-size: 20px;*/
+    /*transform: scale(1.7);*/
+    /*font-weight: lighter;*/
+}
+
+.ic-design {
+    background-color: #e6563b;
+
+}
+
+.ic-develop {
+    background-color: #eb9c3b;
+}
+
+.ic-support {
+    background-color: #7cb06c;
+}
+
+.ic-host {
+    background-color: #00aba9;
+}
+
+.icon-spacing {
+    height: 150px;
+    width: 150px;
+}
+
+h5 {
+    font-size: 1em !important;
+
+}
+
+.article-images {
+    width: 90%;
+    border: 5px solid #e6e6e6;
+    border-radius: 4px;
+}
+
+.small-icons {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+}
+
+/*The List*/
+.the-list-img{
+    float:left;
+    width: 75px;
+    height: 75px;
+}
+
+.the-list-text{
+    font-family: 'Anton', sans-serif;
+}
+
+.twitter-logo{
+    height: 35px;
+    width: 35px;
+    border: 0px;
+}
+
+.lor-tweet{
+    clear: both;
+    font-family: 'Abel', sans-serif;
+}
+
+.tw-the-last{
+    font-family: 'Abel', sans-serif;
+    font-weight: bold;
+}
+
+/*small*/
+@media (min-width: 576px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    #visual-design-h {
+        text-align: right;
+    }
+
+    #web-dev-h {
+        text-align: left;
+
+    }
+
+    .featured {
+        font-size: .7em;
+    }
+}
+
+/*medium*/
+@media (min-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .page-h2{
+        font-size: 20px;
+    }
+
+    .featured {
+        font-size: .7em;
+    }
+
+    .the-list-img{
+        height: 50px;
+        width: 50px;
+    }
+
+    .lor-tweet{
+        font-size: 12px;
+        width: 350px;
+    }
+
+
+
+}
+
+/*large*/
+@media (min-width: 992px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    .featured {
+        font-size: 1rem;
+    }
+
+    .the-list-text{
+        font-family: 'Anton', sans-serif;
+    }
+    .the-list-img{
+        height: 65px;
+        width: 65px;
+    }
+    .page-h2 {
+        font-size: 28px;
+        font-family: 'Anton', sans-serif;
+    }
+    .lor-tweet{
+        width: 350px;
+    }
+}
+
+
+/*extra large*/
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 64px;
+    }
+
+    .the-list-img {
+        height: 75px;
+        width: 75px;
+    }
+
+    .page-h2 {
+        font-size: 32px;
+        font-family: 'Anton', sans-serif;
+    }
+
+    .lor-tweet {
+        width: 350px;
+    }
+}
+
+
+
