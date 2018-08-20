@@ -1,0 +1,38 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#img-0 {
+    background-image: url("../img/turtle.jpg");
+}
+
+#img-1 {
+    background-image: url("../img/lion.jpg");
+}
+
+#img-2 {
+    background-image: url("../img/tiger.jpg");
+}
+
+#img-3 {
+    background-image: url("../img/bear.jpg");
+}
+
+#img-4 {
+    background-image: url("../img/grain.jpg");
+}
+
+#img-5 {
+    background-image: url("../img/beach.jpg");
+}
+
+#img-6 {
+    background-image: url("../img/river.jpg");
+}
+
+#img-7 {
+    background-image: url("../img/lake.jpg");
+}
