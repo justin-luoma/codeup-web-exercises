@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API</title>
+
+
+    <style type="text/css">
+        #map-canvas-5 {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+
+
+</head>
+<body>
+<!-- div to hold map -->
+<div id="map-canvas-5"></div>
+
+<input type="button" value="Set Zoom to 5" id="5" class="zoom_btns">
+<input type="button" value="Set Zoom to 15" id="15" class="zoom_btns">
+<input type="button" value="Set Zoom to 20" id="20" class="zoom_btns">
+<input type="button" value="Set Marker and Zoom" id="createMarker">
+<!--<div id="map-canvas-15"></div>-->
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function () {
+        "use strict";
+
+        var mapOptions = {
+            zoom: 5,
+            center: {
+                lat: 29.426791,
+                lng: -98.489602
+            }
+        };
+
+        var infowindow = new google.maps.InfoWindow();
+
+
+        var map5 = new google.maps.Map(document.getElementById("map-canvas-5"), mapOptions);
+        let placeId = "ChIJoxI9pFNfXIYRL5EAduXYuyg";
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({"placeId": placeId}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map5.setCenter(results[0].geometry.location);
+            } else {
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+        let kimuraMarker;
+
+        function createMapMarker(place) {
+            var marker = new google.maps.Marker({
+                map: map5,
+                position: place.geometry.location,
+                animation: google.maps.Animation.DROP,
+            });
+            kimuraMarker = marker;
+            google.maps.event.addListener(marker, 'click', function () {
+                showInfoWindow(place, marker);
+            });
+            showInfoWindow(place);
+        }
+
+        var service = new google.maps.places.PlacesService(map5);
+
+        service.getDetails({placeId: placeId}, placesDetailsCallback);
+
+        let placeServicesPlace;
+
+        function placesDetailsCallback(place, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                placeServicesPlace = place;
+            }
+        }
+
+        function showInfoWindow(place, marker) {
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                'Place ID: ' + place.place_id + '<br>' +
+                place.formatted_address + '</div>');
+            infowindow.open(map5, marker);
+        }
+
+        let btns = document.getElementsByClassName("zoom_btns");
+        Array.from(btns).forEach((button) => {
+            button.addEventListener('click', (e) => {
+                map5.setZoom(parseInt(event.target.id));
+            });
+        });
+
+        document.getElementById("createMarker").addEventListener('click', (e) => {
+            map5.setZoom(19);
+            createMapMarker(placeServicesPlace);
+        });
+        // let map15 = new google.maps.Map(document.getElementById("map-canvas-15"), {zoom: 15})
+    })();
+</script>
+</body>
+</html>
