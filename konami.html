@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+    var lastKey = null;
+
+    $(document).keyup(function (event) {
+        // console.log(lastKey);
+        let key = event.key;
+        if (lastKey === null && key === "ArrowUp") {
+            lastKey = "ArrowUp1";
+        } else if (lastKey === "ArrowUp1" && key === "ArrowUp") {
+            lastKey = "ArrowUp2";
+        } else if (lastKey === "ArrowUp2" && key === "ArrowDown") {
+            lastKey = "ArrowDown1";
+        } else if (lastKey === "ArrowDown1" && key === "ArrowDown") {
+            lastKey = "ArrowDown2"
+        } else if (lastKey === "ArrowDown2" && key === "ArrowLeft") {
+            lastKey = "ArrowLeft1";
+        } else if (lastKey === "ArrowLeft1" && key === "ArrowRight") {
+            lastKey = "ArrowRight1";
+        } else if (lastKey === "ArrowRight1" && key === "ArrowLeft") {
+            lastKey = "ArrowLeft2";
+        } else if (lastKey === "ArrowLeft2" && key === "ArrowRight") {
+            lastKey = "ArrowRight2";
+        } else if (lastKey === "ArrowRight2" && key === "b") {
+            lastKey = "b";
+        } else if (lastKey === "b" && key === "a") {
+            lastKey = "a";
+        } else if (lastKey === "a" && key === "Enter") {
+            alert("You have added 30 lives!");
+            lastKey = null;
+        } else {
+            lastKey = null;
+        }
+    });
+</script>
+</body>
+</html>
