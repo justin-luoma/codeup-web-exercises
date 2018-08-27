@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery</title>
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div id="div" class="div">
     <h1 id="h1" class="h1">h1</h1>
-    <p>p</p>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
     <ul class="ul" id="ul">
         <li class="li codeup" id="li1">li1</li>
         <li class="li codeup" id="li2">li2</li>
@@ -20,10 +28,19 @@
 <script>
     "use strict";
     $(document).ready(function () {
-        $("li").css("font-size", "20px");
-        $("h1, p, li").css("background-color", "yellow");
-        $("li:nth-child(2)").removeClass("codeup");
-        $(".codeup").css("border", "1px solid red");
+
+        $("#h1").click(function () {
+            $(this).css("background-color", "pink");
+        });
+        $("p").dblclick(function () {
+            $(this).css("font-size", "18px");
+        });
+        $("li").hover(function () {
+            $(this).toggleClass("red");
+        }, function () {
+            $(this).toggleClass("red");
+        });
+
     });
 </script>
 </body>
