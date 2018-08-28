@@ -4,7 +4,50 @@
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
 </head>
+<style type="text/css">
+    .invisible {
+        display: none;
+    }
+
+    .color {
+        color: yellow;
+    }
+</style>
 <body>
 
+<dl>
+    <dt>What is the largest national park?</dt>
+    <dd class="invisible">Wrangell - St. Elias National Park and Preserve</dd>
+    <dt>What is the smallest national park</dt>
+    <dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
+    <dt>What is the National Park Service budget</dt>
+    <dd class="invisible">FY 2017 Enacted: 02.932 billion</dd>
+    <dt>How much land does the National Park Service own?</dt>
+    <dd class="invisible">640 million acres, ~28% of the nation's total 2.27 billion acres</dd>
+    <dt>Can I take my pet with me?</dt>
+    <dd class="invisible">In most areas, yes!</dd>
+    <dt>When was the first national park created?</dt>
+    <dd class="invisible">1872</dd>
+    <dt>Does every state have a national park?</dt>
+    <dd class="invisible">No, Delaware does not have a national park.</dd>
+    <dt>Which national park has the lowest elevation?</dt>
+    <dd class="invisible">Death Valley National Park</dd>
+    <dt>Which national park has the highest elevation?</dt>
+    <dd class="invisible">Mount Whitney</dd>
+</dl>
+
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("body").append("<button id='toggle-dd'>Show definitions</button>");
+        $("#toggle-dd").click(function () {
+            $("dd").toggleClass("invisible");
+            $(this).text("Hide definitions");
+        });
+        $("dt").click(function (e) {
+            $(this).toggleClass("color");
+        });
+    });
+</script>
 </body>
 </html>
