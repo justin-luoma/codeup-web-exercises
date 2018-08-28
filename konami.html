@@ -2,18 +2,51 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style type="text/css">
+        #animate {
+            position: fixed;
+            bottom: 0;
+            right: -260px;
+            width: 259px;
+            height: 339px;
+        }
+    </style>
 </head>
 <body>
 <h1>Konami Code</h1>
+<img src="img/contra.png" id="animate"/>
 
 <script src="js/jquery.js"></script>
 <script>
     "use strict";
-    var lastKey = null;
-
+    let lastKey = null;
+    let konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    let code = [];
     $(document).keyup(function (event) {
+        let width = "+=" + ($(document).width() + 260);
+        let clone = $("#animate").clone();
+
         // console.log(lastKey);
         let key = event.key;
+        // if (code.length < konamiCode.length) {
+        code.push(key);
+        // } else
+        if (code.length > konamiCode.length) {
+            code.shift();
+        }
+        if (code.length === konamiCode.length) {
+            if (code.toString() === konamiCode.toString()) {
+                //$("#animate").fadeUp(100);
+                $("#animate").animate({
+                    right: width
+                }, 5000, function () {
+                    // Animation complete.
+                    $(this).replaceWith(clone);
+                });
+                code = [];
+            }
+        }
+
         if (lastKey === null && key === "ArrowUp") {
             lastKey = "ArrowUp1";
         } else if (lastKey === "ArrowUp1" && key === "ArrowUp") {
@@ -35,7 +68,8 @@
         } else if (lastKey === "b" && key === "a") {
             lastKey = "a";
         } else if (lastKey === "a" && key === "Enter") {
-            alert("You have added 30 lives!");
+            // alert("You have added 30 lives!");
+            console.log(code.toString());
             lastKey = null;
         } else {
             lastKey = null;
