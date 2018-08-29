@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
 </head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <style type="text/css">
     .invisible {
         display: none;
@@ -12,33 +15,142 @@
     .color {
         color: yellow;
     }
+
+    .highlighted {
+        background-color: yellow;
+    }
+
+    .underlined {
+        text-decoration: underline;
+    }
+
+    img {
+        object-fit: cover;
+        height: 300px;
+        width: 200px;
+        border: 5px solid brown;
+    }
+
+    .frame {
+        display: inline-block;
+    }
+
 </style>
 <body>
+<div class="container mb-5">
+    <div class='jumbotron'>
+        <h1>Fun with jQuery!</h1>
+    </div>
 
-<dl>
-    <dt>What is the largest national park?</dt>
-    <dd class="invisible">Wrangell - St. Elias National Park and Preserve</dd>
-    <dt>What is the smallest national park</dt>
-    <dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
-    <dt>What is the National Park Service budget</dt>
-    <dd class="invisible">FY 2017 Enacted: 02.932 billion</dd>
-    <dt>How much land does the National Park Service own?</dt>
-    <dd class="invisible">640 million acres, ~28% of the nation's total 2.27 billion acres</dd>
-    <dt>Can I take my pet with me?</dt>
-    <dd class="invisible">In most areas, yes!</dd>
-    <dt>When was the first national park created?</dt>
-    <dd class="invisible">1872</dd>
-    <dt>Does every state have a national park?</dt>
-    <dd class="invisible">No, Delaware does not have a national park.</dd>
-    <dt>Which national park has the lowest elevation?</dt>
-    <dd class="invisible">Death Valley National Park</dd>
-    <dt>Which national park has the highest elevation?</dt>
-    <dd class="invisible">Mount Whitney</dd>
-</dl>
+    <section>
+        <ul>
+            <!--<h2>Animals</h2>-->
+            <li id="cats">
+                <h3>Cats</h3>
+                <ul>
+                    <li>Tabby</li>
+                    <li>Lion</li>
+                    <li>Ocelot</li>
+                    <li>Jaguar</li>
+                </ul>
+            </li>
+            <li id="whales">
+                <h3>Whales</h3>
+                <ul>
+                    <li>Humpback</li>
+                    <li>Blue Whale</li>
+                    <li>Gray Whale</li>
+                    <li>Spermaceti</li>
+                    <li>Right Whale</li>
+                </ul>
+            </li>
+            <li id="snakes">
+                <h3>Snakes</h3>
+                <ul>
+                    <li>King Cobra</li>
+                    <li>Coral</li>
+                    <li>Rattler</li>
+                    <li>Grass Snake</li>
+                </ul>
+            </li>
 
-<script src="js/jquery.js"></script>
+        </ul>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 frame">
+                <img src="img/painting1.jpg" alt="">
+            </div>
+            <div class="col-3 frame">
+                <img src="img/painting2.jpg" alt="">
+            </div>
+            <div class="col-3 frame">
+                <img src="img/painting3.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 frame">
+                <button id="first">First</button>
+            </div>
+            <div class="col-4 frame">
+                <button id="second">Second</button>
+            </div>
+            <div class="col-4 frame">
+                <button id="third">Third</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br><br><br><br><br>
+<div class="mt-5">
+    <dl>
+        <dt>What is the largest national park?</dt>
+        <dd class="invisible">Wrangell - St. Elias National Park and Preserve</dd>
+        <dt>What is the smallest national park</dt>
+        <dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
+        <dt>What is the National Park Service budget</dt>
+        <dd class="invisible">FY 2017 Enacted: 02.932 billion</dd>
+        <dt>How much land does the National Park Service own?</dt>
+        <dd class="invisible">640 million acres, ~28% of the nation's total 2.27 billion acres</dd>
+        <dt>Can I take my pet with me?</dt>
+        <dd class="invisible">In most areas, yes!</dd>
+        <dt>When was the first national park created?</dt>
+        <dd class="invisible">1872</dd>
+        <dt>Does every state have a national park?</dt>
+        <dd class="invisible">No, Delaware does not have a national park.</dd>
+        <dt>Which national park has the lowest elevation?</dt>
+        <dd class="invisible">Death Valley National Park</dd>
+        <dt>Which national park has the highest elevation?</dt>
+        <dd class="invisible">Mount Whitney</dd>
+    </dl>
+</div>
+<!--<script src="js/jquery.js"></script>-->
 <script>
+    let clicked = false;
     $(document).ready(function () {
+        $("section").append("<button id='toggle-li-highlight'>Toggle highlight last li in each ul</button>");
+        $("#toggle-li-highlight").click(() => {
+            $("ul").each(function () {
+                $(this).children().last().toggleClass("highlighted");
+            });
+        });
+        $("h3").click(clicked, function () {
+            // console.log()
+            if (clicked) {
+                $(this).next().children().css("font-weight", "normal");
+                clicked = false;
+            } else {
+                $(this).next().children().css("font-weight", "bold");
+                clicked = true;
+            }
+        });
+        $("li").click(function (e) {
+            // $(this).parent().css("color", "blue");
+            console.log($(e.target).parent().children().first().css("color", "blue"));
+        });
+
+
         $("body").append("<button id='toggle-dd'>Show definitions</button>");
         $("#toggle-dd").click(function () {
             $("dd").toggleClass("invisible");
@@ -47,7 +159,8 @@
         $("dt").click(function (e) {
             $(this).toggleClass("color");
         });
-    });
+    })
+    ;
 </script>
 </body>
 </html>
