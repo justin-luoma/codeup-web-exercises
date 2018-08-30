@@ -58,7 +58,8 @@
         let accessToken = window.location.href.split('/')[window.location.href.split('/').length - 1].split('?')[1];
         let host = window.location.host;
         let path = "/codeup-web-exercises/codeup_web_exercises/";
-        let dataPath = 'http://' + host + path + 'data/inventory.json?' + accessToken;
+        let protocal = window.location.protocol;
+        let dataPath = protocal + host + path + 'data/blog.json?' + accessToken;
 
         // TODO: Create an ajax GET request for /data/inventory.json
         function fetchInventory() {
