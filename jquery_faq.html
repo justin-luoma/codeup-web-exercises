@@ -35,8 +35,47 @@
         display: inline-block;
     }
 
+    .newsletter {
+        display: inline-block;
+    }
+
+    .effects {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .modalDiv {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: grey;
+        line-height: 100px;
+    }
+
+    .modalDiv > h2 {
+        vertical-align: middle;
+        margin-top: 0; /* need this to clear the default margin */
+        margin-bottom: 0;
+    }
+
 </style>
 <body>
+<div class="effects">
+    <h1 class="newsletter">Would you like to sign up for our newsletter? <sup><span
+            class="hide-parent-div">x</span></sup></h1>
+
+</div>
+
+<div class="modalDiv">
+    <h2>Register for this site? <sup><span class="hide-parent-div">x</span></sup></h2>
+</div>
+
+
 <div class="container mb-5">
     <div class='jumbotron'>
         <h1>Fun with jQuery!</h1>
@@ -129,6 +168,19 @@
 <script>
     let clicked = false;
     $(document).ready(function () {
+        setTimeout(function () {
+            $(".modalDiv").fadeIn();
+        }, 8000);
+
+        $(".hide-parent-div").click(function () {
+            $(this).parent().parent().parent().hide();
+        });
+        $("h3").next().hide();
+        $("h3").click(function () {
+            $(this).next().slideDown();
+        });
+
+
         $("section").append("<button id='toggle-li-highlight'>Toggle highlight last li in each ul</button>");
         $("#toggle-li-highlight").click(() => {
             $("ul").each(function () {
