@@ -59,7 +59,7 @@
         let host = window.location.host;
         let path = "/codeup-web-exercises/codeup_web_exercises/";
         let protocal = window.location.protocol;
-        let dataPath = protocal + host + path + 'data/blog.json?' + accessToken;
+        let dataPath = protocal + '//' + host + path + 'data/inventory.json?' + accessToken;
 
         // TODO: Create an ajax GET request for /data/inventory.json
         function fetchInventory() {

@@ -57,7 +57,7 @@
         let host = window.location.host;
         let path = "/codeup-web-exercises/codeup_web_exercises/";
         let protocal = window.location.protocol;
-        let dataPath = protocal + host + path + 'data/blog.json?' + accessToken;
+        let dataPath = protocal + '//' + host + path + 'data/blog.json?' + accessToken;
 
         function html(title, content, categories, date, marginClass) {
             return `<div class="card ${marginClass}">
