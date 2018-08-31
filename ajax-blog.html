@@ -55,9 +55,11 @@
         "use strict";
         let accessToken = window.location.href.split('/')[window.location.href.split('/').length - 1].split('?')[1];
         let host = window.location.host;
-        let path = "/codeup-web-exercises/codeup_web_exercises/";
+        let pathArr = window.location.pathname.split("/");
+        let path = pathArr.slice(0, pathArr.length - 1).join("/");
         let protocal = window.location.protocol;
-        let dataPath = protocal + '//' + host + path + 'data/blog.json?' + accessToken;
+        let file = "/data/blog.json";
+        let dataPath = protocal + '//' + host + path + file + ((accessToken !== undefined) ? ("?" + accessToken) : "");
 
         function html(title, content, categories, date, marginClass) {
             return `<div class="card ${marginClass}">
