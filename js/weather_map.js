@@ -4,10 +4,9 @@ let apiKey = localStorage.getItem("owmApiKey");
 
 function currentWeather(data) {
     let cWeatherHTML =
-        `<h2 class="m-0">${new Date(data.dt * 1000).toDateString()}</h2>
-            <br />
+        `
             <h3 class="m-0">Temperature: ${data.main.temp}º</h3>
-            <h5 class="m-0">High/Low: ${data.main.temp_min}º/${data.main.temp_max}º</h5>
+            <h5 class="m-0">High/Low: º${data.main.temp_max}/${data.main.temp_min}º</h5>
             <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
             <h5 class="m-0">${data.weather[0].main}: ${data.weather[0].description}</h5>
             <h5 class="m-0">Humidity: ${data.main.humidity}</h5>
@@ -22,7 +21,7 @@ let weatherData = {};
 let forcastData = {};
 
 function getAPIData(lat = 29.42, lon = -98.5) {
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
+    $.get("https://api.openweathermap.org/data/2.5/weather", {
         APPID: apiKey,
         "lat": lat,
         "lon": lon,
@@ -32,7 +31,7 @@ function getAPIData(lat = 29.42, lon = -98.5) {
         currentWeather(data);
 
     });
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    $.get("https://api.openweathermap.org/data/2.5/forecast", {
         APPID: apiKey,
         "lat": lat,
         "lon": lon,
@@ -164,7 +163,7 @@ function displayForecast(data) {
         let weatherHTML =
             `<h2 class="m-0">${new Date(dayData.dt_txt).toDateString()}</h2>
             <br />
-            <h5 class="m-0">High/Low: ${dayData.temp_min.toFixed(1)}º/${dayData.temp_max.toFixed(1)}º</h5>
+            <h5 class="m-0">High/Low: ${dayData.temp_max.toFixed(1)}º/${dayData.temp_min.toFixed(1)}º</h5>
             <img src="http://openweathermap.org/img/w/${dayData.weather.icon}.png">
             <h5 class="m-0">${dayData.weather.main}: ${dayData.weather.desc}</h5>
             <h5 class="m-0">Humidity: ${dayData.humidity.toFixed(1)}</h5>
