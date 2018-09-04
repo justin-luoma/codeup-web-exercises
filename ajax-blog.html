@@ -7,6 +7,7 @@
     <style type="text/css">
         #insertBlogData {
             overflow: auto;
+            max-height: 80vh;
         }
     </style>
 </head>
@@ -41,7 +42,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#insertBlogData").css("max-height", (window.innerHeight * .8));
+        // $("#insertBlogData").css("max-height", (window.innerHeight * .8));
     });
     (function () {
         function captializeWords(words) {

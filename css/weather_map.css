@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    background-color: lightblue;
+    flex-flow: column;
+    padding: 1em;
+}
+
+.row {
+    display: flex;
+    width: 100% !important;
+}
+
+.col {
+    border: 1px solid black;
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    justify-content: center;
+}
