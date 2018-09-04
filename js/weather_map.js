@@ -83,7 +83,7 @@ function processForecastData(data) {
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
-        if (i === 4) {
+        if (i === 6) {
             day1Avg.dt_txt = day.dt_txt;
             day1Avg.weather = {
                 "desc": day.weather[0].description,
@@ -111,7 +111,7 @@ function processForecastData(data) {
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
-        if (i === 4) {
+        if (i === 6) {
             day2Avg.dt_txt = day.dt_txt;
             day2Avg.weather = {
                 "desc": day.weather[0].description,
@@ -139,7 +139,7 @@ function processForecastData(data) {
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
-        if (i === 4) {
+        if (i === 6) {
             day3Avg.dt_txt = day.dt_txt;
             day3Avg.weather = {
                 "desc": day.weather[0].description,
