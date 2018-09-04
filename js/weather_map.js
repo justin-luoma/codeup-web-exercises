@@ -19,38 +19,46 @@ function currentWeather(data) {
 }
 
 let weatherData = {};
-$.get("http://api.openweathermap.org/data/2.5/weather", {
-    APPID: apiKey,
-    q: "San Antonio, US",
-    units: "imperial",
-}).done(function (data) {
-    weatherData = data;
-    currentWeather(data);
-});
-
 let forcastData = {};
-$.get("http://api.openweathermap.org/data/2.5/forecast", {
-    APPID: apiKey,
-    q: "San Antonio, US",
-    units: "imperial",
-    cnt: 30
-}).done(function (data) {
-    forcastData = data;
-    parseForcastData(data);
-    processForecastData(dayData);
-});
+
+function getAPIData(lat = 29.42, lon = -98.5) {
+    $.get("http://api.openweathermap.org/data/2.5/weather", {
+        APPID: apiKey,
+        "lat": lat,
+        "lon": lon,
+        units: "imperial",
+    }).done(function (data) {
+        weatherData = data;
+        currentWeather(data);
+
+    });
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: apiKey,
+        "lat": lat,
+        "lon": lon,
+        units: "imperial",
+        cnt: 30
+    }).done(function (data) {
+        forcastData = data;
+        parseForcastData(data);
+        processForecastData(dayData);
+    });
+
+}
+
 
 function addDays(date, days) {
     return new Date(date.setDate(date.getDate() + days));
 }
 
-let dayData = {
-    day1Data: [],
-    day2Data: [],
-    day3Data: [],
-};
+let dayData = {};
 
 function parseForcastData(data) {
+    dayData = {
+        day1Data: [],
+        day2Data: [],
+        day3Data: [],
+    };
     for (let i = 1; i < 4; i++) {
         let date = new Date();
         let dateString = addDays(date, i).toDateString();
@@ -164,7 +172,15 @@ function displayForecast(data) {
             <h5 class="m-0">Pressure: ${dayData.pressure.toFixed(1)}</h5>
         `;
         let div = $(`#weather${i}`);
-        div.toggleClass("hidden");
+        div.removeClass("hidden");
         div.html(weatherHTML);
     }
 }
+
+$('#location_btn').click(function () {
+    let lat = $('#lat_tb').val();
+    let lon = $('#lon_tb').val();
+    getAPIData(lat, lon);
+});
+
+getAPIData();
