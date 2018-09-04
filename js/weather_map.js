@@ -184,3 +184,31 @@ $('#location_btn').click(function () {
 });
 
 getAPIData();
+
+let marker = null;
+
+function initMap() {
+    // The location of Uluru
+    var sanAntonio = {lat: 29.42, lng: -98.5};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 10, center: sanAntonio});
+    // The marker, positioned at Uluru
+    marker = new google.maps.Marker({position: sanAntonio, map: map});
+
+    map.addListener('click', function (e) {
+        placeMarkerAndPanTo(e.latLng, map);
+    });
+}
+
+function placeMarkerAndPanTo(latLng, map) {
+    if (marker !== null) {
+        marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+    });
+    getAPIData(latLng.lat(), latLng.lng());
+    map.panTo(latLng);
+}
