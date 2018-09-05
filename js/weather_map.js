@@ -71,14 +71,18 @@ function parseForcastData(data) {
 
 function processForecastData(data) {
     let day1Avg = {};
-    let max = 0;
-    let min = 0;
+    let max = -200;
+    let min = 200;
     let hum = 0;
     let wind = 0;
     let pres = 0;
     data.day1Data.forEach((day, i) => {
-        max += day.main.temp_max;
-        min += day.main.temp_min;
+        if (day.main.temp_max > max) {
+            max = day.main.temp_max;
+        }
+        if (day.main.temp_min < min) {
+            min = day.main.temp_min;
+        }
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
@@ -92,21 +96,25 @@ function processForecastData(data) {
             }
         }
     });
-    day1Avg.temp_max = (max / data.day1Data.length);
-    day1Avg.temp_min = (min / data.day1Data.length);
+    day1Avg.temp_max = max;
+    day1Avg.temp_min = min;
     day1Avg.humidity = (hum / data.day1Data.length);
     day1Avg.wind = (wind / data.day1Data.length);
     day1Avg.pressure = (pres / data.day1Data.length);
 
     let day2Avg = {};
-    max = 0;
-    min = 0;
+    max = -200;
+    min = 200;
     hum = 0;
     wind = 0;
     pres = 0;
     data.day2Data.forEach((day, i) => {
-        max += day.main.temp_max;
-        min += day.main.temp_min;
+        if (day.main.temp_max > max) {
+            max = day.main.temp_max;
+        }
+        if (day.main.temp_min < min) {
+            min = day.main.temp_min;
+        }
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
@@ -120,21 +128,25 @@ function processForecastData(data) {
             }
         }
     });
-    day2Avg.temp_max = (max / data.day1Data.length);
-    day2Avg.temp_min = (min / data.day1Data.length);
+    day2Avg.temp_max = max;
+    day2Avg.temp_min = min;
     day2Avg.humidity = (hum / data.day1Data.length);
     day2Avg.wind = (wind / data.day1Data.length);
     day2Avg.pressure = (pres / data.day1Data.length);
 
     let day3Avg = {};
-    max = 0;
-    min = 0;
+    max = -200;
+    min = 200;
     hum = 0;
     wind = 0;
     pres = 0;
     data.day3Data.forEach((day, i) => {
-        max += day.main.temp_max;
-        min += day.main.temp_min;
+        if (day.main.temp_max > max) {
+            max = day.main.temp_max;
+        }
+        if (day.main.temp_min < min) {
+            min = day.main.temp_min;
+        }
         hum += day.main.humidity;
         wind += day.wind.speed;
         pres += day.main.pressure;
@@ -148,8 +160,8 @@ function processForecastData(data) {
             }
         }
     });
-    day3Avg.temp_max = (max / data.day1Data.length);
-    day3Avg.temp_min = (min / data.day1Data.length);
+    day3Avg.temp_max = max;
+    day3Avg.temp_min = min;
     day3Avg.humidity = (hum / data.day1Data.length);
     day3Avg.wind = (wind / data.day1Data.length);
     day3Avg.pressure = (pres / data.day1Data.length);
